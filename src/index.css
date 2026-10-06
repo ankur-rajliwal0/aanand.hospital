@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: #f8fafc;
+  }
+
+  /* Apply overflow-x hidden to #root instead of body to prevent breaking AOS scroll detection on mobile */
+  #root {
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Optimize AOS on mobile to prevent elements from appearing too late due to delay */
+@media screen and (max-width: 768px) {
+  [data-aos] {
+    transition-delay: 0s !important;
+  }
+}

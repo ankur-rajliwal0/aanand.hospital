@@ -41,6 +41,7 @@ import surgerySlide2 from './assets/image copy 5.png';
 import surgerySlide3 from './assets/image copy 6.png';
 import surgerySlide4 from './assets/image copy 7.png';
 import surgerySlide5 from './assets/image copy 8.png';
+import staffImg5 from './assets/image copy 9.png';
 import receptionBg from './assets/reception.jpg';
 import dentistBlurBg from './assets/dentist_blur_bg.jpg';
 import Lenis from '@studio-freight/lenis';
@@ -486,14 +487,15 @@ function App() {
 
 
                <h2 className="text-[44px] font-serif text-center mb-16 tracking-wide relative z-20">Our Staff</h2>
-               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 lg:px-12 relative z-20">
+               <div className="flex flex-wrap justify-center gap-6 px-4 lg:px-12 relative z-20">
                   {[
                      { name: "Dr. Gyan Prakash \nSharma", role: "BDS\nJUNIOR DENTIST", img: staffImg1 },
                      { name: "Dr. Apeksha\nkaushik", role: "BDS\nSENIOR DENTIST", img: staffImg2 },
                      { name: "Dr. Sonali\nSahu", role: "BDS\nJUNIOR DENTIST", img: staffImg3 },
-                     { name: "Dr. Shreya", role: "BDS\nJUNIOR DENTIST", img: staffImg4 }
+                     { name: "Dr. Shreya", role: "BDS\nJUNIOR DENTIST", img: staffImg4 },
+                     { name: "Dr. Savita Yadav", role: "MDS\nORAL AND MAXILLOFACIAL SURGEON", img: staffImg5 }
                   ].map((staff, i) => (
-                     <div key={i} className="bg-white rounded-[10px] shadow-[0_10px_30px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay={i * 100}>
+                     <div key={i} className="w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(20%-1.5rem)] min-w-[200px] bg-white rounded-[10px] shadow-[0_10px_30px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay={i * 100}>
                         <img src={staff.img} alt={`Staff ${i + 1}`} className="w-full h-[220px] object-cover object-top" />
                         <div className="p-6 pt-8 text-center flex-grow flex flex-col justify-center">
                            <h3 className="text-[17px] font-serif font-bold mb-3 text-[#333] whitespace-pre-line leading-snug" dangerouslySetInnerHTML={{ __html: staff.name }}></h3>
@@ -559,13 +561,6 @@ function App() {
                         <button className="bg-[#4aa5ff] hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">
                            Get Started
                         </button>
-                     </div>
-
-                     {/* Dot */}
-                     <div className="w-full flex justify-center mt-6 mb-6 relative z-20">
-                        <div className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center bg-white shadow-sm">
-                           <div className="w-2.5 h-2.5 rounded-full bg-black"></div>
-                        </div>
                      </div>
 
                      {/* Image with Radial Fade */}

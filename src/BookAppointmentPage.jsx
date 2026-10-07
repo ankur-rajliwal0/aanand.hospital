@@ -4,6 +4,7 @@ import { Phone, Mail, Clock, ShieldPlus, Menu, X } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import hospitalLogo from './assets/hospital_logo.jpg';
+import rghsLogo from './assets/RGHSScheme.png';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
 import Footer from './Footer';
 
@@ -27,14 +28,7 @@ export default function BookAppointmentPage() {
         <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
           <div className="flex items-center space-x-6">
             <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
-            <div className="flex flex-col items-center justify-center pl-2">
-              <div className="text-[#00a651] flex flex-col items-center">
-                <ShieldPlus className="w-8 h-8 mb-1" />
-                <span className="text-[8px] font-black leading-tight text-center uppercase">
-                  RGHS<br />Rajasthan Government<br />Health Scheme
-                </span>
-              </div>
-            </div>
+            <img src={rghsLogo} alt="RGHS Scheme" className="h-[90px] w-auto ml-2" />
           </div>
 
           {/* Desktop Nav */}
@@ -42,6 +36,7 @@ export default function BookAppointmentPage() {
             <Link to="/" className="hover:text-blue-800 transition">HOME</Link>
             <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
             <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
+            <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
             <Link to="/book-appointment" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BOOK APPOINTMENT</Link>
           </nav>
 
@@ -60,6 +55,7 @@ export default function BookAppointmentPage() {
             <Link to="/" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>HOME</Link>
             <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
             <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
+            <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
             <Link to="/book-appointment" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
           </nav>
         )}
@@ -159,7 +155,7 @@ export default function BookAppointmentPage() {
                 <Mail className="w-5 h-5 mt-1" fill="white" />
                 <div>
                   <h4 className="font-serif text-[20px] mb-2 font-normal tracking-wide">Email Us</h4>
-                  <p className="text-[14px] font-medium">info@ananddentalclinic.com</p>
+                  <p className="text-[14px] font-medium">dr.savita1989@gmail.com</p>
                 </div>
               </div>
               <button className="border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">

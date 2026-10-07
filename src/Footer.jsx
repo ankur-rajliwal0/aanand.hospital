@@ -47,6 +47,7 @@ export default function Footer() {
               { label: 'Contact Us', to: '/contact' },
               { label: 'Book Appointment', to: '/book-appointment' },
               { label: 'Our Services', to: '/services' },
+              { label: 'Blogs', to: '/blogs' },
               { label: 'Our Doctors', to: '/#doctors' },
             ].map(({ label, to }) => (
               <li key={label}>
@@ -75,7 +76,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Mail className="w-4 h-4 mt-0.5 text-[#4aa5ff] shrink-0" />
-              <p>info@ananddentalclinic.com</p>
+              <p>dr.savita1989@gmail.com</p>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 mt-0.5 text-[#4aa5ff] shrink-0" />

@@ -26,6 +26,7 @@ import 'aos/dist/aos.css';
 import heroDentists from './assets/image.png';
 import doctorPortrait from './assets/image copy.png';
 import hospitalLogo from './assets/hospital_logo.jpg';
+import rghsLogo from './assets/RGHSScheme.png';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
 import staff1 from './assets/staff_1.jpg';
 import staff2 from './assets/staff_2.jpg';
@@ -137,18 +138,15 @@ function ServicesPage() {
                </div>
 
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
-                  {/* Fake RGHS Logo Text since we don't have the real logo */}
-                  <div className="text-[#00a651] flex flex-col items-center">
-                     <ShieldPlus className="w-8 h-8" />
-                     <span className="text-[8px] font-black leading-tight text-center uppercase"><br /> Anand dental<br />Hospital</span>
-                  </div>
+                  <img src={rghsLogo} alt="RGHS Scheme" className="h-[90px] w-auto" />
                </div>
 
                {/* Desktop Nav */}
                <nav className="hidden md:flex items-center space-x-8 text-[14px] font-black text-[#0066cc] tracking-wide uppercase">
                   <Link to="/" className="hover:text-blue-800 transition">HOME</Link>
                   <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
-                  <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
+                  <Link to="/services" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
+                  <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
                   <Link to="/book-appointment" className="hover:text-blue-800 transition">BOOK APPOINTMENT</Link>
                </nav>
 
@@ -166,8 +164,9 @@ function ServicesPage() {
                <nav className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 text-[14px] font-black text-[#0066cc] tracking-wide uppercase z-50 border-t border-gray-100">
                   <Link to="/" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>HOME</Link>
                   <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
-                  <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
-                  <Link to="/book-appointment" className="text-blue-900" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+                  <Link to="/services" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
+                  <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
+                  <Link to="/book-appointment" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
                </nav>
             )}
          </header>
@@ -328,7 +327,7 @@ function ServicesPage() {
                         <Mail className="w-5 h-5 mt-1" fill="white" />
                         <div>
                            <h4 className="font-serif text-[20px] mb-2 font-normal tracking-wide">Email Us</h4>
-                           <p className="text-[14px] font-medium">info@ananddentalclinic.com</p>
+                           <p className="text-[14px] font-medium">dr.savita1989@gmail.com</p>
                         </div>
                      </div>
 
@@ -384,7 +383,7 @@ function ServicesPage() {
 
          {/* Floating WhatsApp Button */}
          <a 
-            href="https://wa.me/1234567890" 
+            href="https://wa.me/919462209414" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="fixed bottom-6 right-6 bg-[#25D366] text-white p-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-[100] transition-transform hover:scale-110 flex items-center justify-center animate-bounce"

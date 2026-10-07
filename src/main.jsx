@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import ContactPage from './ContactPage.jsx'
 import BookAppointmentPage from './BookAppointmentPage.jsx'
+import ServicesPage from './ServicesPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/book-appointment" element={<BookAppointmentPage />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

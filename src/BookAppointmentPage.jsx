@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Clock, ShieldPlus } from 'lucide-react';
+import { Phone, Mail, Clock, ShieldPlus, Menu, X } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import hospitalLogo from './assets/hospital_logo.jpg';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
-import CustomCursor from './CustomCursor';
 import Footer from './Footer';
 
 export default function BookAppointmentPage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 900, once: true, offset: 60 });
     setTimeout(() => AOS.refresh(), 300);
@@ -22,11 +22,9 @@ export default function BookAppointmentPage() {
 
   return (
     <div className="font-sans text-gray-800 bg-white min-h-screen">
-      <CustomCursor />
-
       {/* ── Header ── */}
       <header className="bg-white py-3 px-8 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-[1250px] mx-auto flex justify-between items-center">
+        <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
           <div className="flex items-center space-x-6">
             <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
             <div className="flex flex-col items-center justify-center pl-2">
@@ -38,13 +36,33 @@ export default function BookAppointmentPage() {
               </div>
             </div>
           </div>
+
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8 text-[14px] font-black text-[#0066cc] tracking-wide uppercase">
             <Link to="/" className="hover:text-blue-800 transition">HOME</Link>
             <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
-            <a href="#" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></a>
+            <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
             <Link to="/book-appointment" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BOOK APPOINTMENT</Link>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-[#0066cc] p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/* Mobile Dropdown Nav */}
+        {isMobileMenuOpen && (
+          <nav className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 text-[14px] font-black text-[#0066cc] tracking-wide uppercase z-50 border-t border-gray-100">
+            <Link to="/" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>HOME</Link>
+            <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
+            <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
+            <Link to="/book-appointment" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+          </nav>
+        )}
       </header>
 
       {/* ── Section 1: Hero + Form ── */}

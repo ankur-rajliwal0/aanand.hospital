@@ -10,10 +10,6 @@
   #root {
     overflow-x: hidden;
   }
-
-  *, *::before, *::after {
-    cursor: none !important;
-  }
 }
 
 /* Optimize AOS on mobile to prevent elements from appearing too late due to delay */

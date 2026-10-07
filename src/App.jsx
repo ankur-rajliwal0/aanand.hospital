@@ -151,7 +151,7 @@ function App() {
                   <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
                   <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
                   <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
-                  <Link to="/book-appointment" className="hover:text-blue-800 transition">BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="hover:text-blue-800 transition">BOOK APPOINTMENT</a>
                </nav>
 
                {/* Mobile Menu Button */}
@@ -170,7 +170,7 @@ function App() {
                   <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
                   <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
                   <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
-                  <Link to="/book-appointment" className="text-blue-900" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="text-blue-900" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</a>
                </nav>
             )}
          </header>
@@ -216,9 +216,9 @@ function App() {
 
                   {/* Button outside the white box on mobile */}
                   <div className="text-center md:text-left mt-[350px] md:mt-0 pb-12 md:pb-0" data-aos="fade-up">
-                     <button className="bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-full shadow-xl transition-transform hover:scale-105 duration-300 text-[15px] md:text-lg">
+                     <a href="tel:+919462209414" className="inline-block bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-full shadow-xl transition-transform hover:scale-105 duration-300 text-[15px] md:text-lg">
                         Book Appointment
-                     </button>
+                     </a>
                   </div>
                </div>
 
@@ -822,9 +822,9 @@ function App() {
                      </div>
 
                      {/* Book Button */}
-                     <button className="border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
+                     <a href="tel:+919462209414" className="inline-block border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
                         Book Appointment
-                     </button>
+                     </a>
 
                      {/* Socials */}
                      <div className="flex space-x-3">

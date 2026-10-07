@@ -45,18 +45,21 @@ export default function Footer() {
             {[
               { label: 'Home', to: '/' },
               { label: 'Contact Us', to: '/contact' },
-              { label: 'Book Appointment', to: '/book-appointment' },
+              { label: 'Book Appointment', href: 'tel:+919462209414' },
               { label: 'Our Services', to: '/services' },
               { label: 'Blogs', to: '/blogs' },
               { label: 'Our Doctors', to: '/#doctors' },
-            ].map(({ label, to }) => (
+            ].map(({ label, to, href }) => (
               <li key={label}>
-                <Link
-                  to={to}
-                  className="text-gray-400 hover:text-[#4aa5ff] transition flex items-center gap-2"
-                >
-                  <span className="text-[#4aa5ff] text-[10px]">▶</span> {label}
-                </Link>
+                {href ? (
+                  <a href={href} className="text-gray-400 hover:text-[#4aa5ff] transition flex items-center gap-2">
+                    <span className="text-[#4aa5ff] text-[10px]">▶</span> {label}
+                  </a>
+                ) : (
+                  <Link to={to} className="text-gray-400 hover:text-[#4aa5ff] transition flex items-center gap-2">
+                    <span className="text-[#4aa5ff] text-[10px]">▶</span> {label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -105,12 +108,12 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <Link
-            to="/book-appointment"
+          <a
+            href="tel:+919462209414"
             className="mt-6 inline-block bg-[#4aa5ff] hover:bg-blue-500 text-white font-bold py-2.5 px-7 rounded-full shadow-lg transition-transform hover:scale-105 duration-300 text-[13px]"
           >
             Book Appointment
-          </Link>
+          </a>
         </div>
       </div>
 

@@ -37,7 +37,7 @@ export default function BookAppointmentPage() {
             <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
             <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
             <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
-            <Link to="/book-appointment" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BOOK APPOINTMENT</Link>
+            <a href="tel:+919462209414" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BOOK APPOINTMENT</a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -56,7 +56,7 @@ export default function BookAppointmentPage() {
             <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
             <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
             <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
-            <Link to="/book-appointment" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+            <a href="tel:+919462209414" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</a>
           </nav>
         )}
       </header>
@@ -121,12 +121,12 @@ export default function BookAppointmentPage() {
                 className="w-full bg-white/90 text-gray-800 px-5 py-4 text-[14px] outline-none placeholder-gray-500 block resize-none"
               />
               <div className="bg-white/90 px-5 py-3 flex justify-end">
-                <button
-                  type="submit"
-                  className="bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-2 px-7 rounded-full shadow-lg transition-transform hover:scale-105 duration-300 text-[14px]"
+                <a
+                  href="tel:+919462209414"
+                  className="inline-block bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-2 px-7 rounded-full shadow-lg transition-transform hover:scale-105 duration-300 text-[14px]"
                 >
                   Book Appointment
-                </button>
+                </a>
               </div>
             </form>
           </div>
@@ -158,9 +158,9 @@ export default function BookAppointmentPage() {
                   <p className="text-[14px] font-medium">dr.savita1989@gmail.com</p>
                 </div>
               </div>
-              <button className="border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
+              <a href="tel:+919462209414" className="inline-block border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
                 Book Appointment
-              </button>
+              </a>
               <div className="flex space-x-3">
                 <a href="#" className="w-9 h-9 rounded-full bg-[#3b5998] flex items-center justify-center hover:scale-110 transition shadow-md">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>

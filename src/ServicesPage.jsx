@@ -147,7 +147,7 @@ function ServicesPage() {
                   <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
                   <Link to="/services" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
                   <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
-                  <Link to="/book-appointment" className="hover:text-blue-800 transition">BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="hover:text-blue-800 transition">BOOK APPOINTMENT</a>
                </nav>
 
                {/* Mobile Menu Button */}
@@ -166,7 +166,7 @@ function ServicesPage() {
                   <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
                   <Link to="/services" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
                   <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
-                  <Link to="/book-appointment" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</a>
                </nav>
             )}
          </header>
@@ -183,9 +183,9 @@ function ServicesPage() {
                   Our Dental Services
                </h1>
                <p className="text-gray-400 text-[16px] mb-8">Comprehensive care for your beautiful smile!</p>
-               <button className="bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-3 px-9 rounded-full shadow-lg transition-transform hover:scale-105 duration-300 text-[15px]">
+               <a href="tel:+919462209414" className="inline-block bg-[#4aa5ff] hover:bg-blue-600 text-white font-bold py-3 px-9 rounded-full shadow-lg transition-transform hover:scale-105 duration-300 text-[15px]">
                   Book Appointment
-               </button>
+               </a>
             </div>
          </section>
 
@@ -332,9 +332,9 @@ function ServicesPage() {
                      </div>
 
                      {/* Book Button */}
-                     <button className="border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
+                     <a href="tel:+919462209414" className="inline-block border border-white hover:bg-white hover:text-[#1762c9] text-white font-medium py-2 px-6 rounded text-[15px] transition mb-10 self-start shadow-sm">
                         Book Appointment
-                     </button>
+                     </a>
 
                      {/* Socials */}
                      <div className="flex space-x-3">

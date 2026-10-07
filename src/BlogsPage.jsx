@@ -39,7 +39,7 @@ export default function BlogsPage() {
                   <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
                   <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES</Link>
                   <Link to="/blogs" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BLOGS</Link>
-                  <Link to="/book-appointment" className="hover:text-blue-800 transition">BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="hover:text-blue-800 transition">BOOK APPOINTMENT</a>
                </nav>
 
                {/* Mobile Menu Button */}
@@ -58,7 +58,7 @@ export default function BlogsPage() {
                   <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
                   <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
                   <Link to="/blogs" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
-                  <Link to="/book-appointment" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+                  <a href="tel:+919462209414" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</a>
                </nav>
             )}
          </header>

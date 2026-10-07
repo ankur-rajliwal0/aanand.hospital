@@ -25,7 +25,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import heroDentists from './assets/image.png';
 import doctorPortrait from './assets/image copy.png';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
 import staff1 from './assets/staff_1.jpg';

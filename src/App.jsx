@@ -19,14 +19,17 @@ import {
    Mail,
    Clock,
    Menu,
-   X
+   X,
+   FileText
 } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import heroDentists from './assets/image.png';
 import doctorPortrait from './assets/WhatsApp Image 2026-10-07 at 9.03.58 PM.jpeg';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
+import rghsPdf from './assets/List_of_empaneled_hospitals_under_RGHS.pdf';
+import { jaipurHospitals } from './data/jaipurHospitals';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
 import staff1 from './assets/staff_1.jpg';
 import staff2 from './assets/staff_2.jpg';
@@ -238,9 +241,8 @@ function App() {
                </div>
 
                <div className="bg-[#dcf2e3] md:w-[350px] flex flex-col items-center justify-center relative overflow-hidden py-12 md:py-0">
-                  <div className="flex items-center justify-center font-black text-8xl text-[#00a651] mb-8 relative">
-                     <span className="text-white absolute -left-5 top-5 text-4xl drop-shadow-md">+</span>
-                     <span className="drop-shadow-lg">R</span>
+                  <div className="flex items-center justify-center mb-8 relative">
+                     <img src={rghsLogo} alt="RGHS Scheme" className="h-[120px] w-auto drop-shadow-md" />
                   </div>
                   <div className="bg-[#0056b3] text-white px-8 py-2 text-[15px] font-medium absolute bottom-6 shadow-md w-10/12 text-center">राजस्थान गवर्नमेंट हेल्थ स्कीम</div>
                </div>
@@ -417,6 +419,65 @@ function App() {
                         <Activity className="w-10 h-10 text-cyan-100 drop-shadow-md" strokeWidth={1.5} />
                      </div>
                      <p className="text-[10px] font-serif text-[#333] text-center tracking-[0.08em] uppercase leading-relaxed whitespace-pre-line">{"Maxillofacial\nSurgery"}</p>
+                  </div>
+
+               </div>
+            </div>
+         </section>
+
+         {/* RGHS Empaneled Hospitals Section */}
+         <section className="py-16 px-1 sm:px-2 md:px-6 max-w-[1400px] mx-auto text-center relative z-20 mb-12">
+            <div className="bg-white rounded-[20px] md:rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-4 sm:p-6 md:p-10 lg:p-16 border-t-[10px] border-[#00a651]" data-aos="fade-up">
+               <h2 className="text-[30px] md:text-[44px] font-serif text-[#333] mb-4 tracking-wide">RGHS Empaneled Hospitals in Jaipur</h2>
+               <p className="text-gray-600 text-lg mb-10 max-w-3xl mx-auto">
+                  We are proud to be officially listed among the trusted healthcare providers for the Rajasthan Government Health Scheme in Jaipur City.
+               </p>
+               
+               <div className="bg-[#f8fcf9] rounded-[10px] md:rounded-[20px] p-2 sm:p-4 md:p-8 border border-[#c3edd4] relative text-left" data-aos="zoom-in" data-aos-delay="100">
+                  
+                  {/* Table of Empaneled Hospitals */}
+                  <div className="overflow-x-auto pb-4">
+                     <table className="w-full text-left border-collapse min-w-[600px] md:min-w-[1100px] shadow-sm rounded-lg overflow-hidden">
+                        <thead>
+                           <tr className="bg-[#00a651] text-white text-[11px] md:text-[12px] uppercase tracking-wider">
+                              <th className="p-2 md:p-3 border border-[#008f45] text-center w-10 md:w-12">S.No</th>
+                              <th className="p-2 md:p-3 border border-[#008f45] w-[140px] md:w-[200px]">Hospital Name</th>
+                              <th className="hidden md:table-cell p-3 border border-[#008f45] w-[250px]">Address</th>
+                              <th className="hidden lg:table-cell p-3 border border-[#008f45]">District</th>
+                              <th className="hidden lg:table-cell p-3 border border-[#008f45]">City</th>
+                              <th className="p-2 md:p-3 border border-[#008f45]">Specialty</th>
+                              <th className="p-2 md:p-3 border border-[#008f45]">Phone</th>
+                              <th className="hidden lg:table-cell p-3 border border-[#008f45] whitespace-nowrap">Valid From</th>
+                              <th className="hidden lg:table-cell p-3 border border-[#008f45] whitespace-nowrap">Valid To</th>
+                              <th className="p-2 md:p-3 border border-[#008f45] text-center">Status</th>
+                           </tr>
+                        </thead>
+                        <tbody className="text-[11px] md:text-[12px] text-gray-700 bg-white">
+                           {jaipurHospitals.map((hospital, index) => {
+                              const isAnand = hospital.name.toUpperCase().includes('ANAND DENTAL');
+                              return (
+                                 <tr 
+                                    key={index} 
+                                    className={isAnand ? 'bg-[#e0f4e8] border-2 border-[#00a651] font-bold shadow-[inset_0_0_10px_rgba(0,166,81,0.2)] transform md:scale-[1.01] relative z-10' : 'border-b border-gray-200 hover:bg-gray-50 transition-colors'}
+                                 >
+                                    <td className={`p-2 md:p-3 border-r border-gray-200 text-center align-middle ${isAnand ? 'border-[#00a651] text-[#00695c]' : ''}`}>{hospital.sNo}</td>
+                                    <td className={`p-2 md:p-3 border-r border-gray-200 align-middle ${isAnand ? 'border-[#00a651] text-[#00695c] text-[12px] md:text-[13px]' : ''}`}>
+                                       {isAnand && <Star className="w-3 md:w-3.5 h-3 md:h-3.5 inline mr-1 text-[#f9a825]" />}
+                                       {hospital.name}
+                                    </td>
+                                    <td className={`hidden md:table-cell p-3 border-r border-gray-200 align-middle ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.address}</td>
+                                    <td className={`hidden lg:table-cell p-3 border-r border-gray-200 align-middle ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.district}</td>
+                                    <td className={`hidden lg:table-cell p-3 border-r border-gray-200 align-middle ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.city}</td>
+                                    <td className={`p-2 md:p-3 border-r border-gray-200 align-middle ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.specialty}</td>
+                                    <td className={`p-2 md:p-3 border-r border-gray-200 align-middle whitespace-nowrap ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.phone}</td>
+                                    <td className={`hidden lg:table-cell p-3 border-r border-gray-200 align-middle whitespace-nowrap ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.from}</td>
+                                    <td className={`hidden lg:table-cell p-3 border-r border-gray-200 align-middle whitespace-nowrap ${isAnand ? 'border-[#00a651]' : ''}`}>{hospital.to}</td>
+                                    <td className={`p-2 md:p-3 text-center align-middle font-bold ${isAnand ? 'text-[#00a651]' : ''}`}>{hospital.status}</td>
+                                 </tr>
+                              );
+                           })}
+                        </tbody>
+                     </table>
                   </div>
 
                </div>

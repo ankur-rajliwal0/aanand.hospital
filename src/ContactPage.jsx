@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, Clock, ShieldPlus, Menu, X } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
 import smilingWoman from './assets/smiling_woman.jpg';
 import dentistBlurBg from './assets/dentist_blur_bg.jpg';
@@ -125,11 +125,7 @@ export default function ContactPage() {
             {/* RGHS Card */}
             <div className="bg-[#80cbc4] rounded-2xl p-10 flex flex-col items-center justify-center shadow-xl w-full md:w-[420px]" data-aos="fade-right">
               <div className="w-[220px] h-[180px] mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 200 180" className="w-full h-full">
-                  <polygon points="30,20 80,10 140,30 170,70 160,130 110,160 60,150 20,110 10,60" fill="#00897b" stroke="#004d40" strokeWidth="2" />
-                  <text x="70" y="110" fontSize="72" fontWeight="900" fill="#f9a825" fontFamily="serif">R</text>
-                  <text x="52" y="80" fontSize="32" fontWeight="900" fill="white" fontFamily="sans-serif">+</text>
-                </svg>
+                <img src={rghsLogo} alt="RGHS Scheme" className="w-[140px] h-auto drop-shadow-lg" />
               </div>
               <p className="text-[#004d40] font-black text-2xl tracking-widest uppercase">RGHS</p>
               <p className="text-[#004d40] font-semibold text-[15px] text-center mt-1 tracking-wide">Rajasthan Government<br />Health Scheme</p>

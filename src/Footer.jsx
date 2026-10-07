@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Heart } from 'lucide-react';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 
 export default function Footer() {
   return (
@@ -92,13 +92,12 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2.5 text-[13px] text-gray-400">
             {[
-              ['Monday', '10:00 am – 8:00 pm'],
-              ['Tuesday', '10:00 am – 8:00 pm'],
-              ['Wednesday', '10:00 am – 8:00 pm'],
-              ['Thursday', '10:00 am – 8:00 pm'],
-              ['Friday', '10:00 am – 8:00 pm'],
-              ['Saturday', '10:00 am – 8:00 pm'],
-              ['Sunday', '10:00 am – 8:00 pm'],
+              ['Monday', '9:00 am – 9:00 pm'],
+              ['Tuesday', '9:00 am – 9:00 pm'],
+              ['Wednesday', '9:00 am – 9:00 pm'],
+              ['Thursday', '9:00 am – 9:00 pm'],
+              ['Friday', '9:00 am – 9:00 pm'],
+              ['Saturday', '9:00 am – 9:00 pm'],
             ].map(([day, time]) => (
               <li key={day} className="flex justify-between gap-4">
                 <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-[#4aa5ff]" />{day}</span>

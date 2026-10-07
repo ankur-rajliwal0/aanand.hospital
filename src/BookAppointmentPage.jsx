@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, Clock, ShieldPlus, Menu, X } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
 import Footer from './Footer';

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import hospitalLogo from './assets/hospital_logo.jpg';
+import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
 import dentistBlurBg from './assets/dentist_blur_bg.jpg';
 import Footer from './Footer';
@@ -66,9 +66,12 @@ export default function BlogsPage() {
          {/* Hero Section */}
          <div className="bg-[#1a7ee6] text-white py-16 px-6 text-center shadow-inner relative overflow-hidden" style={{ backgroundImage: `url(${dentistBlurBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay' }}>
             <div className="absolute inset-0 bg-[#1a7ee6]/80" />
-            <div className="relative z-10 max-w-3xl mx-auto">
+            <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
                <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 drop-shadow-md">Dental Health Blog</h1>
-               <p className="text-lg md:text-xl font-medium text-blue-100 drop-shadow-sm">Tips, insights, and expert advice for a healthier smile.</p>
+               <p className="text-lg md:text-xl font-medium text-blue-100 drop-shadow-sm mb-8">Tips, insights, and expert advice for a healthier smile.</p>
+               <div className="inline-block bg-white text-[#0066cc] px-6 py-3 rounded-full font-bold text-sm md:text-base shadow-lg border-2 border-white transition-transform hover:scale-105">
+                  ✅ RGHS, ECHS, Ayushman, CGHS & All TPA Facilities Available
+               </div>
             </div>
          </div>
 

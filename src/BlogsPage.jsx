@@ -30,7 +30,7 @@ export default function BlogsPage() {
             <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
                <div className="flex items-center space-x-6">
                   <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
-                  <span className="text-2xl md:text-3xl font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block">Anand Hospital</span>
+                  <span className="ml-3 lg:ml-4 text-[11px] md:text-xs lg:text-sm font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block max-w-[200px] md:max-w-[250px] lg:max-w-[350px] leading-snug">RGHS APPROVED ANAND DENTAL HOSPITAL AND DIAGNOSTIC CENTRE</span>
                   <img src={rghsLogo} alt="RGHS Scheme" className="h-[90px] w-auto ml-2 hidden sm:block" />
                </div>
 

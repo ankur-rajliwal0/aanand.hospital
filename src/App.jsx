@@ -309,7 +309,7 @@ function App() {
             <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
                <div className="flex items-center">
                   <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
-                  <span className="ml-4 text-2xl md:text-3xl font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block">Anand Hospital</span>
+                  <span className="ml-3 lg:ml-4 text-[11px] md:text-xs lg:text-sm font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block max-w-[200px] md:max-w-[250px] lg:max-w-[350px] leading-snug">RGHS APPROVED ANAND DENTAL HOSPITAL AND DIAGNOSTIC CENTRE</span>
                </div>
 
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
@@ -401,8 +401,7 @@ function App() {
             <div className="max-w-[1250px] mx-auto bg-[#ebf8f0] flex flex-col md:flex-row items-stretch justify-between min-h-[220px]">
                <div className="bg-[#1D70B8] p-6 flex flex-col items-center justify-center md:w-[280px]">
                   <img src={hospitalLogo} alt="Hospital Logo" className="h-[100px] bg-white p-2 rounded-full mb-2 shadow-lg" />
-                  <div className="text-white font-bold tracking-widest text-xl leading-none mt-2">Anand  </div>
-                  <div className="text-white text-[11px] tracking-widest mt-1">dental Hospital</div>
+                  <div className="text-white font-bold tracking-widest text-[12px] text-center leading-relaxed mt-3 px-4">RGHS APPROVED ANAND DENTAL HOSPITAL AND DIAGNOSTIC CENTRE</div>
                </div>
 
                <div className="flex items-center justify-center flex-1 py-8 md:py-0">
@@ -423,8 +422,8 @@ function App() {
          {/* Doctor Info Section */}
          <section className="py-20 px-8 max-w-[1400px] mx-auto">
             <div className="text-center mb-16">
-               <h3 className="font-bold text-gray-600 tracking-[0.2em] text-sm mb-4">ANAND DENTAL HOSPITAL</h3>
-               <h2 className="text-5xl md:text-[64px] font-black text-[#1D70B8] uppercase tracking-wide">Anand Hospital</h2>
+               <h3 className="font-bold text-gray-600 tracking-[0.2em] text-sm mb-4">WELCOME TO</h3>
+               <h2 className="text-3xl md:text-[40px] font-black text-[#1D70B8] uppercase tracking-wide leading-tight">RGHS APPROVED ANAND DENTAL HOSPITAL AND DIAGNOSTIC CENTRE</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-24 max-w-5xl mx-auto">
@@ -790,9 +789,9 @@ function App() {
                         <p className="text-white text-[13px] leading-[1.8] font-medium max-w-lg mx-auto mb-10">
                            "<span className="font-bold">Anand Dental: Your All-Inclusive Dental Care Destination.</span> We offer various dental services, from preventive care and routine check-ups to advanced treatments. Our team of experienced professionals is dedicated to providing personalised care for every member of your family. Trust us to keep your family's smiles healthy and bright."
                         </p>
-                        <button className="bg-[#4aa5ff] hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">
+                        <Link to="/services" className="inline-block bg-[#4aa5ff] hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">
                            Get Started
-                        </button>
+                        </Link>
                      </div>
 
                      {/* Image with Radial Fade */}
@@ -838,9 +837,14 @@ function App() {
                      </div>
                   </div>
                   <div className="mt-6 md:mt-0">
-                     <button className="bg-[#1a73e8] hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded text-sm transition shadow-sm">
+                     <a 
+                        href="https://www.google.com/search?client=ms-android-oppo-rvo3&hs=GN5V&sca_esv=b4acfd2b2c8afb1a&cs=1&hl=en-AU&output=search&kgmid=/g/11y5l6yjb9&q=ANAND+DENTAL&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/act/m1/4&kgs=066ace349974e097&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/act/m1/4#lrd=0x396db30020854b0f:0xd2dfd395e3eb1f13,3,,,," 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block bg-[#1a73e8] hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded text-sm transition shadow-sm"
+                     >
                         Review us on Google
-                     </button>
+                     </a>
                   </div>
                </div>
 
@@ -895,10 +899,10 @@ function App() {
                         <a href="#" className="w-9 h-9 rounded-full bg-[#3b5998] flex items-center justify-center hover:scale-110 transition shadow-md">
                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z" /></svg>
                         </a>
-                        <a href="#" className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition shadow-md">
+                        <a href="https://wa.me/919462209414" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition shadow-md">
                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" /></svg>
                         </a>
-                        <a href="#" className="w-9 h-9 rounded-full bg-[#E1306C] flex items-center justify-center hover:scale-110 transition shadow-md">
+                        <a href="https://www.instagram.com/ananddentalhospitaljaipur?stkn=MTYybmU2dDBkaGtucg%3D%3D" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#E1306C] flex items-center justify-center hover:scale-110 transition shadow-md">
                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" /></svg>
                         </a>
                         <a href="#" className="w-9 h-9 rounded-full bg-[#0077b5] flex items-center justify-center hover:scale-110 transition shadow-md">
@@ -914,7 +918,7 @@ function App() {
                            <Clock className="w-4 h-4 text-[#1762c9]" />
                         </div>
                         <div>
-                           <h4 className="font-serif text-[18px] mb-4 font-normal tracking-wide uppercase">Anand Dental<br />Jaipur</h4>
+                           <h4 className="font-serif text-[16px] mb-4 font-normal tracking-wide uppercase leading-snug">RGHS APPROVED ANAND DENTAL HOSPITAL<br />AND DIAGNOSTIC CENTRE</h4>
                            <p className="text-[14px] font-medium leading-relaxed max-w-[280px] text-white">
                               45,46, Opp. Parth Chiranjivi Complex,<br />
                               Hanuman Vatika A, Gokulpura,<br />

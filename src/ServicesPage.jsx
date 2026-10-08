@@ -135,6 +135,7 @@ function ServicesPage() {
             <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
                <div className="flex items-center">
                   <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
+                  <span className="ml-4 text-2xl md:text-3xl font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block">Anand Hospital</span>
                </div>
 
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">

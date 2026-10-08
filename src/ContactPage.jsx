@@ -24,6 +24,7 @@ export default function ContactPage() {
         <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
           <div className="flex items-center space-x-6">
             <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
+            <span className="text-2xl md:text-3xl font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block">Anand Hospital</span>
             <img src={rghsLogo} alt="RGHS Scheme" className="h-[90px] w-auto ml-2" />
           </div>
 

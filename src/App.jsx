@@ -51,6 +51,176 @@ import Lenis from '@studio-freight/lenis';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
+const reviewsData = [
+   {
+      id: 1,
+      name: "Divyanshi chouhan",
+      time: "2 days ago",
+      avatar: "D",
+      bgColor: "bg-[#d81b60]",
+      textColor: "text-white",
+      text: "Had my wisdom tooth surgically extracted, and the experience was really smooth and comfortable. Very professional and caring approach."
+   },
+   {
+      id: 2,
+      name: "SV choudhary",
+      time: "2 days ago",
+      avatar: <Smile className="w-7 h-7" />,
+      bgColor: "bg-[#ffeb3b]",
+      textColor: "text-[#222]",
+      text: "Nice experience at dental clinic by Dr Savita Yadav"
+   },
+   {
+      id: 3,
+      name: "KISHAN SINGH",
+      time: "4 days ago",
+      avatar: "K",
+      bgColor: "bg-[#5e35b1]",
+      textColor: "text-white",
+      text: "Good Experience with Dr Manisha And Dr Rashmi All thanks to Dr Savita Yadav for such good clinical work and great nature."
+   },
+   {
+      id: 4,
+      name: "Aman Sharma",
+      time: "1 week ago",
+      avatar: "A",
+      bgColor: "bg-[#1976d2]",
+      textColor: "text-white",
+      text: "Best dental hospital in Jaipur! The staff is very polite and Dr Savita Yadav explained the entire procedure clearly. Highly recommended for any dental issues."
+   },
+   {
+      id: 5,
+      name: "Neha Gupta",
+      time: "2 weeks ago",
+      avatar: "N",
+      bgColor: "bg-[#43a047]",
+      textColor: "text-white",
+      text: "Got my root canal done here. It was painless and the clinic is extremely hygienic. Thank you Dr Savita Yadav and team for the wonderful care."
+   }
+];
+
+function ReviewCard({ review }) {
+   const [expanded, setExpanded] = useState(false);
+   
+   return (
+      <div className="bg-[#f5f5f5] rounded-lg p-6 shadow-sm h-full flex flex-col w-full min-h-[220px]">
+         <div className="flex items-center space-x-4 mb-4 relative">
+            <div className="relative">
+               <div className={`w-12 h-12 rounded-full ${review.bgColor} ${review.textColor} flex items-center justify-center text-xl font-medium shrink-0`}>
+                  {review.avatar}
+               </div>
+               <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
+                  <span className="text-[#4285F4] text-[12px] font-bold">G</span>
+               </div>
+            </div>
+            <div className="min-w-0">
+               <div className="flex items-center space-x-1">
+                  <h4 className="font-semibold text-[15px] text-[#333] truncate">{review.name}</h4>
+                  <BadgeCheck className="w-4 h-4 text-[#1a73e8] shrink-0" fill="currentColor" color="white" />
+               </div>
+               <p className="text-xs text-gray-500 font-medium">{review.time}</p>
+            </div>
+         </div>
+         <div className="flex text-[#FBBC05] mb-3">
+            {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" className="w-4 h-4" />)}
+         </div>
+         <p className="text-[#444] text-[14px] leading-relaxed flex-grow">
+            {expanded || review.text.length <= 100 ? review.text : `${review.text.substring(0, 100)}...`}
+         </p>
+         {review.text.length > 100 && (
+            <button 
+               className="text-[#1a73e8] text-sm mt-2 hover:underline text-left font-medium w-fit cursor-pointer shrink-0"
+               onClick={() => setExpanded(!expanded)}
+            >
+               {expanded ? 'Read less' : 'Read more'}
+            </button>
+         )}
+      </div>
+   );
+}
+
+function ReviewSlider() {
+   const sliderRef = useRef(null);
+   const [activeIndex, setActiveIndex] = useState(0);
+
+   const scrollRight = () => {
+      if (sliderRef.current) {
+         const itemWidth = sliderRef.current.children[0].offsetWidth + 24; // width + gap
+         if (sliderRef.current.scrollLeft + sliderRef.current.clientWidth >= sliderRef.current.scrollWidth - 10) {
+             sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+         } else {
+             sliderRef.current.scrollBy({ left: itemWidth, behavior: 'smooth' });
+         }
+      }
+   };
+
+   const scrollLeftAction = () => {
+      if (sliderRef.current) {
+         const itemWidth = sliderRef.current.children[0].offsetWidth + 24; 
+         if (sliderRef.current.scrollLeft <= 0) {
+             sliderRef.current.scrollTo({ left: sliderRef.current.scrollWidth, behavior: 'smooth' });
+         } else {
+             sliderRef.current.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+         }
+      }
+   };
+   
+   const handleScroll = () => {
+      if (sliderRef.current) {
+         const scrollLeft = sliderRef.current.scrollLeft;
+         const itemWidth = sliderRef.current.children[0].offsetWidth + 24;
+         const newIndex = Math.round(scrollLeft / itemWidth);
+         setActiveIndex(Math.min(newIndex, reviewsData.length - 1));
+      }
+   };
+
+   useEffect(() => {
+       const timer = setInterval(() => {
+           scrollRight();
+       }, 3000); 
+       return () => clearInterval(timer);
+   }, []);
+
+   return (
+      <div className="relative w-full max-w-full group">
+         <div 
+            ref={sliderRef}
+            onScroll={handleScroll}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+         >
+            {reviewsData.map((review) => (
+               <div key={review.id} className="snap-start shrink-0 w-[calc(100vw-4rem)] md:w-[calc(33.333%-1rem)]">
+                  <ReviewCard review={review} />
+               </div>
+            ))}
+         </div>
+         {/* Prev Button Overlay */}
+         <div 
+            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-500 text-white rounded-full items-center justify-center shadow-lg hover:bg-gray-600 cursor-pointer transition z-10 opacity-0 group-hover:opacity-100"
+            onClick={scrollLeftAction}
+         >
+            <ChevronLeft className="w-6 h-6" />
+         </div>
+         {/* Next Button Overlay */}
+         <div 
+            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-500 text-white rounded-full items-center justify-center shadow-lg hover:bg-gray-600 cursor-pointer transition z-10 opacity-0 group-hover:opacity-100"
+            onClick={scrollRight}
+         >
+            <ChevronRight className="w-6 h-6" />
+         </div>
+         {/* Dots */}
+         <div className="flex justify-center mt-6 space-x-2 items-center">
+            {reviewsData.map((_, idx) => (
+               <div 
+                  key={idx} 
+                  className={`rounded-full transition-all ${idx === activeIndex ? 'w-2 h-2 bg-[#444]' : 'w-1.5 h-1.5 bg-gray-300'}`}
+               ></div>
+            ))}
+         </div>
+      </div>
+   );
+}
+
 function Counter({ end, duration = 2000, suffix = '' }) {
    const [count, setCount] = useState(0);
    const [hasAnimated, setHasAnimated] = useState(false);
@@ -139,6 +309,7 @@ function App() {
             <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
                <div className="flex items-center">
                   <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
+                  <span className="ml-4 text-2xl md:text-3xl font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block">Anand Hospital</span>
                </div>
 
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
@@ -252,8 +423,8 @@ function App() {
          {/* Doctor Info Section */}
          <section className="py-20 px-8 max-w-[1400px] mx-auto">
             <div className="text-center mb-16">
-               <h3 className="font-bold text-gray-600 tracking-[0.2em] text-sm mb-4">ANAND DENTAL JAIPUR</h3>
-               <h2 className="text-5xl md:text-[64px] font-black text-[#1D70B8] uppercase tracking-wide">Anand Dental</h2>
+               <h3 className="font-bold text-gray-600 tracking-[0.2em] text-sm mb-4">ANAND DENTAL HOSPITAL</h3>
+               <h2 className="text-5xl md:text-[64px] font-black text-[#1D70B8] uppercase tracking-wide">Anand Hospital</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-24 max-w-5xl mx-auto">
@@ -674,114 +845,7 @@ function App() {
                </div>
 
                {/* Cards Grid */}
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-
-                  {/* Card 1 */}
-                  <div className="bg-[#f5f5f5] rounded-lg p-6 shadow-sm">
-                     <div className="flex items-center space-x-4 mb-4 relative">
-                        <div className="relative">
-                           <div className="w-12 h-12 rounded-full bg-[#d81b60] text-white flex items-center justify-center text-xl font-medium">D</div>
-                           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
-                              <span className="text-[#4285F4] text-[12px] font-bold">G</span>
-                           </div>
-                        </div>
-                        <div>
-                           <div className="flex items-center space-x-1">
-                              <h4 className="font-semibold text-[15px] text-[#333]">Divyanshi chouhan</h4>
-                              <BadgeCheck className="w-4 h-4 text-[#1a73e8]" fill="currentColor" color="white" />
-                           </div>
-                           <p className="text-xs text-gray-500 font-medium">2 days ago</p>
-                        </div>
-                     </div>
-                     <div className="flex text-[#FBBC05] mb-3">
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                     </div>
-                     <p className="text-[#444] text-[14px] leading-relaxed line-clamp-3">
-                        Had my wisdom tooth surgically extracted, and the experience was really smooth and comfortable. Very...
-                     </p>
-                     <button className="text-gray-500 text-sm mt-1 hover:underline">Read more</button>
-                  </div>
-
-                  {/* Card 2 */}
-                  <div className="bg-[#f5f5f5] rounded-lg p-6 shadow-sm">
-                     <div className="flex items-center space-x-4 mb-4 relative">
-                        <div className="relative">
-                           <div className="w-12 h-12 rounded-full bg-[#ffeb3b] text-[#222] flex items-center justify-center text-xl font-medium">
-                              <Smile className="w-7 h-7" />
-                           </div>
-                           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
-                              <span className="text-[#4285F4] text-[12px] font-bold">G</span>
-                           </div>
-                        </div>
-                        <div>
-                           <div className="flex items-center space-x-1">
-                              <h4 className="font-semibold text-[15px] text-[#333]">SV choudhary</h4>
-                              <BadgeCheck className="w-4 h-4 text-[#1a73e8]" fill="currentColor" color="white" />
-                           </div>
-                           <p className="text-xs text-gray-500 font-medium">2 days ago</p>
-                        </div>
-                     </div>
-                     <div className="flex text-[#FBBC05] mb-3">
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                     </div>
-                     <p className="text-[#444] text-[14px] leading-relaxed line-clamp-3">
-                        Nice experience at dental clinic by Dr Vishnu sir
-                     </p>
-                     <button className="text-gray-500 text-sm mt-1 hover:underline">Read more</button>
-                  </div>
-
-                  {/* Card 3 */}
-                  <div className="bg-[#f5f5f5] rounded-lg p-6 shadow-sm">
-                     <div className="flex items-center space-x-4 mb-4 relative">
-                        <div className="relative">
-                           <div className="w-12 h-12 rounded-full bg-[#5e35b1] text-white flex items-center justify-center text-xl font-medium">K</div>
-                           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
-                              <span className="text-[#4285F4] text-[12px] font-bold">G</span>
-                           </div>
-                        </div>
-                        <div>
-                           <div className="flex items-center space-x-1">
-                              <h4 className="font-semibold text-[15px] text-[#333]">KISHAN SINGH</h4>
-                              <BadgeCheck className="w-4 h-4 text-[#1a73e8]" fill="currentColor" color="white" />
-                           </div>
-                           <p className="text-xs text-gray-500 font-medium">4 days ago</p>
-                        </div>
-                     </div>
-                     <div className="flex text-[#FBBC05] mb-3">
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                        <Star fill="currentColor" className="w-4 h-4" />
-                     </div>
-                     <p className="text-[#444] text-[14px] leading-relaxed line-clamp-3">
-                        Good Experience with Dr Manisha And Dr Rashmi All thanks to Dr Vishnu Singh for such good clinical...
-                     </p>
-                     <button className="text-gray-500 text-sm mt-1 hover:underline">Read more</button>
-                  </div>
-
-                  {/* Next Button Overlay */}
-                  <div className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-500 text-white rounded-full items-center justify-center shadow-lg hover:bg-gray-600 cursor-pointer transition">
-                     <ChevronRight className="w-6 h-6" />
-                  </div>
-
-               </div>
-
-               {/* Dots */}
-               <div className="flex justify-center mt-10 space-x-2 items-center">
-                  <div className="w-2 h-2 rounded-full bg-[#444]"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-               </div>
+               <ReviewSlider />
 
                {/* Watermark */}
                <div className="flex justify-center mt-8">

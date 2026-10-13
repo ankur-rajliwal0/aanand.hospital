@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import hospitalLogo from './assets/logo.png';
 import rghsLogo from './assets/RGHSScheme.png';
 import dentistMaskBg from './assets/dentist_mask_bg.jpg';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 export default function BookAppointmentPage() {
@@ -24,43 +25,7 @@ export default function BookAppointmentPage() {
   return (
     <div className="font-sans text-gray-800 bg-white min-h-screen">
       {/* ── Header ── */}
-      <header className="bg-white py-3 px-8 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-[1250px] mx-auto flex justify-between items-center relative">
-          <div className="flex items-center space-x-6">
-            <img src={hospitalLogo} alt="Anand Dental Jaipur Logo" className="h-[70px] w-auto" />
-            <span className="ml-3 lg:ml-4 text-[11px] md:text-xs lg:text-sm font-black text-[#1D70B8] uppercase tracking-wider hidden sm:block max-w-[200px] md:max-w-[250px] lg:max-w-[350px] leading-snug">RGHS APPROVED ANAND DENTAL HOSPITAL AND DIAGNOSTIC CENTRE</span>
-            <img src={rghsLogo} alt="RGHS Scheme" className="h-[90px] w-auto ml-2" />
-          </div>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8 text-[14px] font-black text-[#0066cc] tracking-wide uppercase">
-            <Link to="/" className="hover:text-blue-800 transition">HOME</Link>
-            <Link to="/contact" className="hover:text-blue-800 transition">CONTACT US</Link>
-            <Link to="/services" className="hover:text-blue-800 transition flex items-center gap-1">SERVICES <span className="text-[9px] mt-0.5">▼</span></Link>
-            <Link to="/blogs" className="hover:text-blue-800 transition">BLOGS</Link>
-            <a href="tel:+919462209414" className="text-blue-900 border-b-2 border-blue-600 pb-0.5 transition">BOOK APPOINTMENT</a>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-[#0066cc] p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Nav */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 text-[14px] font-black text-[#0066cc] tracking-wide uppercase z-50 border-t border-gray-100">
-            <Link to="/" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>HOME</Link>
-            <Link to="/contact" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>CONTACT US</Link>
-            <Link to="/services" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link>
-            <Link to="/blogs" className="hover:text-blue-800 transition" onClick={() => setIsMobileMenuOpen(false)}>BLOGS</Link>
-            <a href="tel:+919462209414" className="text-blue-900 transition" onClick={() => setIsMobileMenuOpen(false)}>BOOK APPOINTMENT</a>
-          </nav>
-        )}
-      </header>
+      <Navbar />
 
       {/* ── Section 1: Hero + Form ── */}
       <section className="relative min-h-[480px] flex items-stretch overflow-hidden">

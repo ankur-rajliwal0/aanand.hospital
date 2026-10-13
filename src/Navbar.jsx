@@ -15,58 +15,53 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white py-2.5 px-3 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-sm border-b border-gray-100">
-      <div className="max-w-[1550px] mx-auto flex items-center justify-between gap-2 sm:gap-4 lg:gap-6 relative">
+    <header className="bg-white py-1.5 sm:py-2.5 px-2 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-sm border-b border-gray-100">
+      <div className="max-w-[1550px] mx-auto flex items-center justify-between gap-1.5 sm:gap-4 lg:gap-6 relative">
         
         {/* ── Box 1: 1st Branch (Anand Dental Hospital) ── */}
         <Link to="/" className="flex items-center shrink-0 group">
           <img
             src={hospitalLogo}
             alt="Anand Dental Hospital Logo"
-            className="h-[52px] sm:h-[62px] md:h-[68px] w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
+            className="h-[34px] sm:h-[58px] md:h-[68px] w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="ml-2 sm:ml-3 flex flex-col justify-center">
-            <span className="text-[8.5px] sm:text-[9.5px] font-black text-sky-600 uppercase tracking-wider leading-none mb-0.5">
+          <div className="ml-1.5 sm:ml-3 flex flex-col justify-center">
+            <span className="text-[7px] sm:text-[9.5px] font-black text-sky-600 uppercase tracking-wider leading-none mb-0.5">
               RGHS APPROVED
             </span>
-            <span className="text-[11.5px] sm:text-[13px] md:text-[14.5px] lg:text-[15px] font-black text-[#1D70B8] uppercase tracking-tight leading-tight whitespace-nowrap">
+            <span className="text-[10px] sm:text-[13px] md:text-[14.5px] lg:text-[15px] font-black text-[#1D70B8] uppercase tracking-tight leading-tight whitespace-nowrap">
               ANAND DENTAL<span className="hidden sm:inline"> HOSPITAL</span>
             </span>
-            <span className="text-[8px] sm:text-[9px] md:text-[9.5px] font-bold text-gray-500 uppercase tracking-wider leading-none mt-0.5 hidden sm:block">
+            <span className="text-[7.5px] sm:text-[9px] md:text-[9.5px] font-bold text-gray-500 uppercase tracking-wider leading-none mt-0.5 hidden sm:block">
               AND DIAGNOSTIC CENTRE
             </span>
           </div>
         </Link>
 
         {/* ── Box 2: 2nd Branch (Radhe Dental Hospital) ── */}
-        <div className="flex items-center pl-2.5 sm:pl-4 md:pl-5 border-l-2 border-gray-200/80 shrink-0">
+        <div className="flex items-center pl-1.5 sm:pl-4 md:pl-5 border-l border-gray-200/90 sm:border-l-2 shrink-0">
           <img
             src={radheLogo}
             alt="Radhe Dental Hospital Logo"
-            className="h-[50px] sm:h-[58px] md:h-[66px] w-auto object-contain rounded-full shrink-0 drop-shadow-sm transition-transform duration-300 hover:scale-105"
+            className="h-[32px] sm:h-[54px] md:h-[66px] w-auto object-contain rounded-full shrink-0 drop-shadow-sm transition-transform duration-300 hover:scale-105"
           />
-          <div className="ml-2 sm:ml-3 flex flex-col justify-center">
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white text-[8.5px] sm:text-[9.5px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider shadow-xs">
-                2nd Branch
-              </span>
-              <span className="text-[11px] sm:text-[12.5px] md:text-[13.5px] font-black text-[#1D70B8] uppercase tracking-tight whitespace-nowrap">
-                <span className="hidden sm:inline">RADHE </span>DENTAL<span className="hidden md:inline"> HOSPITAL</span>
-              </span>
-            </div>
+          <div className="ml-1.5 sm:ml-3 flex flex-col justify-center">
+            <span className="text-[9.5px] sm:text-[13px] md:text-[14px] font-black text-[#1D70B8] uppercase tracking-tight whitespace-nowrap leading-tight">
+              RADHE DENTAL<span className="hidden md:inline"> HOSPITAL</span>
+            </span>
             <a
               href="tel:+919462209414"
-              className="mt-0.5 sm:mt-1 flex items-center gap-1 text-[11px] sm:text-[12px] md:text-[12.5px] font-bold text-gray-700 hover:text-[#0066cc] transition-colors w-fit group"
-              title="Call Radhe Dental Hospital (2nd Branch): +91 94622 09414"
+              className="mt-0.5 sm:mt-1 flex items-center gap-0.5 sm:gap-1 text-[9px] sm:text-[12px] md:text-[12.5px] font-bold text-gray-700 hover:text-[#0066cc] transition-colors w-fit group"
+              title="Call Radhe Dental Hospital: +91 94622 09414"
             >
-              <Phone className="w-3 h-3 text-[#0066cc] fill-[#0066cc] group-hover:scale-110 transition-transform" />
-              <span className="font-extrabold text-[#0066cc] tracking-wide">+91 94622 09414</span>
+              <Phone className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#0066cc] fill-[#0066cc] group-hover:scale-110 transition-transform shrink-0" />
+              <span className="font-extrabold text-[#0066cc] tracking-tight sm:tracking-wide whitespace-nowrap leading-none">+91 94622 09414</span>
             </a>
           </div>
         </div>
 
         {/* ── Box 3: RGHS Logo + Navigation Links ── */}
-        <div className="flex items-center space-x-4 lg:space-x-6 shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-6 shrink-0">
           {/* RGHS Scheme Logo */}
           <img
             src={rghsLogo}
@@ -128,11 +123,11 @@ export default function Navbar() {
 
           {/* Mobile / Tablet Menu Button */}
           <button
-            className="xl:hidden text-[#0066cc] p-1.5 hover:bg-blue-50 rounded-lg transition"
+            className="xl:hidden text-[#0066cc] p-1 sm:p-1.5 hover:bg-blue-50 rounded-lg transition"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-7 sm:h-7" /> : <Menu className="w-5 h-5 sm:w-7 sm:h-7" />}
           </button>
         </div>
 
@@ -141,15 +136,12 @@ export default function Navbar() {
       {/* ── Mobile & Tablet Dropdown Drawer ── */}
       {isMobileMenuOpen && (
         <nav className="xl:hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 px-6 flex flex-col space-y-3.5 text-[14px] font-black text-[#0066cc] tracking-wide uppercase z-50 border-t border-gray-100 animate-in fade-in duration-200">
-          {/* Quick Call Banner for 2nd Branch */}
+          {/* Quick Call Banner for Radhe Dental Hospital */}
           <div className="bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-100 rounded-xl p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img src={radheLogo} alt="2nd Branch" className="h-10 w-auto object-contain rounded-full shrink-0" />
-              <div className="normal-case">
-                <span className="bg-emerald-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">
-                  2nd Branch
-                </span>
-                <p className="text-[12.5px] font-black text-[#1D70B8] uppercase mt-0.5 leading-tight">
+              <img src={radheLogo} alt="Radhe Dental Hospital" className="h-10 w-auto object-contain rounded-full shrink-0" />
+              <div>
+                <p className="text-[13px] font-black text-[#1D70B8] uppercase leading-tight">
                   Radhe Dental Hospital
                 </p>
               </div>

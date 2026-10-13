@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import hospitalLogo from './assets/logo.png';
-import radheLogo from './assets/image copy 10.png';
+import radheLogo from './assets/Radhe Dental Hospital Emblem.png';
 import rghsLogo from './assets/RGHSScheme.png';
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
           <img
             src={radheLogo}
             alt="Radhe Dental Hospital Logo"
-            className="h-[48px] sm:h-[56px] md:h-[64px] w-auto object-contain shrink-0 drop-shadow-sm transition-transform duration-300 hover:scale-105"
+            className="h-[50px] sm:h-[58px] md:h-[66px] w-auto object-contain rounded-full shrink-0 drop-shadow-sm transition-transform duration-300 hover:scale-105"
           />
           <div className="ml-2 sm:ml-3 flex flex-col justify-center">
             <div className="flex items-center gap-1.5 flex-wrap">
@@ -144,7 +144,7 @@ export default function Navbar() {
           {/* Quick Call Banner for 2nd Branch */}
           <div className="bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-100 rounded-xl p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <img src={radheLogo} alt="2nd Branch" className="h-10 w-auto object-contain shrink-0" />
+              <img src={radheLogo} alt="2nd Branch" className="h-10 w-auto object-contain rounded-full shrink-0" />
               <div className="normal-case">
                 <span className="bg-emerald-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">
                   2nd Branch
